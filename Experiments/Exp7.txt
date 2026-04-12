@@ -1,0 +1,4 @@
+Data annotations are attributes used in model class to define validation rules
+Properties - [Required], [stringLen(50)], [EmailAddress], [Range(18.60)]
+
+Step 1 - dotnet new mvc -n Project_name
