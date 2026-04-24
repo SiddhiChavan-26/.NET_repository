@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
+public class Student
+{
+    public int Id {get; set;}
+
+    public string Name {get; set;} = string.Empty;
+
+    public int Age {get; set;}
+
+    public string Course {get; set;} = string.Empty;
+
+
+}
+
+
+//command to create webAPI project - dotnet new webapi -n project_name
