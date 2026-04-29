@@ -1,0 +1,13 @@
+@page
+@model LibraryManagement.Pages.Books.Delete
+<div class="mx-auto rounded border p-4" style="width: 400px;">
+    <h2>Delete Book</h2>
+    <p>Are you sure you want to delete this book ? </p>
+    <p><strong>Book Id : </strong>@Model.Id</p>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-page="/Books/Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

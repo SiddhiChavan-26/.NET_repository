@@ -1,0 +1,44 @@
+@page
+@model LibraryManagement.Pages.Books.Index
+<h2>Books List</h2>
+<p>This is the Books page of Library Management System.</p>
+<br />
+
+<div>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.listBooks)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.Genre</td>
+                    <td>@book.Price</td>
+                    <td>
+                        <a href="/Books/Edit?id=@book.Id" class="btn btn-primary">Edit</a>
+                        <a asp-page="/Books/Delete" asp-route-id="@book.Id"  class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @* <a asp-page="/Books/Create" class="btn btn-primary mb-3">Add New Book</a> *@
+</div>
